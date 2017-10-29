@@ -1,0 +1,197 @@
+﻿*{
+    /*direction: rtl;*/
+    font-family: 'Droid Arabic Kufi';
+}
+body,h1{
+    /*direction: rtl;*/
+    font-family: 'Droid Arabic Kufi';
+    padding-bottom: 20px;
+}
+
+.navbar{
+    /*direction: ltr;*/
+}
+.float-left
+{
+    float: left;
+}
+
+.fixed-sn main{
+    padding-top : 0.5rem;
+}
+
+body {
+    /*padding-top: 50px;*/
+    
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+
+.special-logo{
+    background-image: url("../images/backgroundlogo.jpg");
+    height:160px;
+}
+.side-nav .logo-wrapper{
+    height: 160px;
+}
+
+.speedmove
+{
+   position: fixed;
+   top:40%;
+   right:0px;
+   background-color: #EEE;
+   /*transform:rotate(90deg);*/
+}
+
+.speedmove i{
+    /*transform: rotate(-90deg);*/
+}
+
+label{
+    right:0px;
+}
+
+
+input[type=date], input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea{
+    font-family: 'Droid Arabic Kufi';
+      font-size: 14px;
+      direction: rtl;
+}
+
+.md-form{
+   
+}
+
+.md-form label,[type=radio]:checked+label, [type=radio]:not(:checked)+label, [type=checkbox]+label{
+    font-size: 11px;
+    right:0;
+    left: unset;
+
+}
+
+/*start bookmark for cards*/
+.ribbon {
+  padding:0 0 10px 0;
+  position:absolute;
+  right:0.25em;
+  top:-0.28em;
+  width:40px;
+
+  
+}
+ .ribbon div {
+    /*background:#bb3a34;
+    background: linear-gradient(#e74841 0%, #bb3a34 100%);*/
+    color:#fff;
+    padding:0.5em 0;
+    text-align:center;
+    text-shadow:-1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  
+
+  /*.ribbon div:after {
+    border-left: 20px solid #bb3a34;
+    border-right: 20px solid #bb3a34;
+    border-bottom: 49px solid transparent;
+    bottom:0;
+    content:'';
+    height: 0;
+    left:0;
+    position:absolute;
+    width: 0;
+  }*/
+
+  /*end bookmark for cards*/
+
+  .card {
+      padding-top: 25px;
+      margin-bottom:8px;
+  }
+
+ /*إنشاء شخص جديد*/
+ .cont{
+        display:none;
+    }
+    .icon-male, .icon-female{
+			font-size:75px;
+			
+		}
+	.type{
+		/*margin-bottom: 100px;*/
+		text-align: center;
+		border:1px solid black;
+		/*margin-right: 55px;
+		margin-left: 100px;*/
+		padding:20px;
+		cursor: pointer;
+		border-radius: 10px;
+		-webkit-transition: all 0.3s  ease-in;
+		color: #FFF;
+	}
+		.type:nth-child(1){
+			box-shadow: 8px -8px 8px #8B9DC3;
+		}
+		
+		.type:nth-child(2){
+			box-shadow: -8px -8px 8px #8B9DC3;
+		}
+		
+		.type:nth-child(3){
+			box-shadow: 8px 8px 8px #8B9DC3;
+		}
+		
+		.type:nth-child(4){
+			box-shadow: -8px 8px 8px #8B9DC3;
+		}
+		
+		.type h1{
+			margin-top: 30px;
+		}
+		
+		.type:hover{
+			-webkit-transform: Scale(1.1,1.1);
+			border-radius: 30px;
+		}
+		
+		.icon-male, .icon-female{
+			-webkit-transition: all 0.3s  ease-in;
+		}
+		
+		.type:hover .icon-male{
+			color: #55ACEE;
+			transform: scale(1.2);
+		}
+		
+		.type:hover .icon-female{
+			color: #f7786b;
+			transform: scale(1.2);
+		}
+
+        .form-active{
+            display: none;
+        }
+        .form-active:first-of-type{
+            display: block;
+        }
+ /*نهياية شخص جديد*/

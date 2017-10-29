@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Model.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Model.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Model.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUsers" EntityType="Model.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Best_Friends" EntityType="Model.Store.Best_Friends" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Emergency_Address" EntityType="Model.Store.Emergency_Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Other_Course" EntityType="Model.Store.Other_Course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personal_Info" EntityType="Model.Store.Personal_Info" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personal_Skills" EntityType="Model.Store.Personal_Skills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills_Info" EntityType="Model.Store.Skills_Info" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Model.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Best_Friends_Personal_Info" Association="Model.Store.FK_Best_Friends_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Best_Friends" EntitySet="Best_Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emergency_Address_Personal_Info" Association="Model.Store.FK_Emergency_Address_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Emergency_Address" EntitySet="Emergency_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Other_Course_Personal_Info" Association="Model.Store.FK_Other_Course_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Other_Course" EntitySet="Other_Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personal_Skills_Personal_Info" Association="Model.Store.FK_Personal_Skills_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Personal_Skills" EntitySet="Personal_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personal_Skills_Skills_Info" Association="Model.Store.FK_Personal_Skills_Skills_Info">
+      <End Role="Skills_Info" EntitySet="Skills_Info" />
+      <End Role="Personal_Skills" EntitySet="Personal_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Model.Store.FK_AspNetUserRoles_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Model.Store.FK_AspNetUserRoles_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Best_Friends">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Emergency_Address">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="relationtype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Other_Course">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="organizer" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="date" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Personal_Info">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="type" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="fname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="lname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fathername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="mothername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ename" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="bdate" Type="datetime" Nullable="true" />
+    <Property Name="bronum" Type="int" Nullable="true" />
+    <Property Name="glass" Type="bit" Nullable="false" />
+    <Property Name="smoke" Type="bit" Nullable="false" />
+    <Property Name="health" Type="bit" Nullable="false" />
+    <Property Name="smoketype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="curraddres" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lastaddress" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="mail" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="facebook" Type="nvarchar" Nullable="true" MaxLength="300" />
+    <Property Name="education" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="netifuse" Type="bit" Nullable="false" />
+    <Property Name="netusing" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="notes" Type="varchar(max)" Nullable="true" />
+    <Property Name="knownfriend" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="knowninitiative" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="knowngheraspage" Type="bit" Nullable="false" />
+    <Property Name="applydate" Type="datetime" Nullable="true" />
+    <Property Name="sizejacket" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizeshirt" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizepants" Type="int" Nullable="true" />
+    <Property Name="sizevest" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizesport" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizeshoes" Type="int" Nullable="true" />
+    <Property Name="isactive" Type="bit" Nullable="true" />
+    <Property Name="personalphoto" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="idphoto" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="schoolname" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="updateddate" Type="datetime" Nullable="true" />
+    <Property Name="educationbranch" Type="nchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Personal_Skills">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="skillid" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="skillid" Type="int" Nullable="false" />
+    <Property Name="eval" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Skills_Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="flag" Type="char" Nullable="true" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="AspNetRoles_Id" />
+      <PropertyRef Name="AspNetUsers_Id" />
+    </Key>
+    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Model.Store.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Model.Store.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Best_Friends_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Best_Friends" Type="Model.Store.Best_Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Best_Friends">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emergency_Address_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Emergency_Address" Type="Model.Store.Emergency_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Emergency_Address">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Other_Course_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Other_Course" Type="Model.Store.Other_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Other_Course">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personal_Skills_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personal_Skills" Type="Model.Store.Personal_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Personal_Skills">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personal_Skills_Skills_Info">
+    <End Role="Skills_Info" Type="Model.Store.Skills_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personal_Skills" Type="Model.Store.Personal_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills_Info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personal_Skills">
+        <PropertyRef Name="skillid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles">
+    <End Role="AspNetRoles" Type="Model.Store.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetRoles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers">
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetUsers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

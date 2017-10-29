@@ -1,0 +1,232 @@
+﻿@model IEnumerable<HRFuture.Models.Personal_Info>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fathername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mothername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bronum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.glass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smoke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.health)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smoketype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.curraddres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.netifuse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.netusing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.knownfriend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.knowninitiative)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.knowngheraspage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.applydate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizejacket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizeshirt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizepants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizevest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizesport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizeshoes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isactive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personalphoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idphoto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fathername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mothername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bronum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.glass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smoke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.health)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smoketype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.curraddres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastaddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.netifuse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.netusing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.knownfriend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.knowninitiative)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.knowngheraspage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.applydate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizejacket)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizeshirt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizepants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizevest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizesport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sizeshoes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isactive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.personalphoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idphoto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

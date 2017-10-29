@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HRFuture">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetRole)">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserClaim)">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserLogin)">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUser)">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Best_Friends">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Best_Friends)">
+        <MappingFragment StoreEntitySet="Best_Friends">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergency_Address">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Emergency_Address)">
+        <MappingFragment StoreEntitySet="Emergency_Address">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="relationtype" ColumnName="relationtype" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Other_Course">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Other_Course)">
+        <MappingFragment StoreEntitySet="Other_Course">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="organizer" ColumnName="organizer" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Info)">
+        <MappingFragment StoreEntitySet="Personal_Info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fathername" ColumnName="fathername" />
+          <ScalarProperty Name="mothername" ColumnName="mothername" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="bronum" ColumnName="bronum" />
+          <ScalarProperty Name="glass" ColumnName="glass" />
+          <ScalarProperty Name="smoke" ColumnName="smoke" />
+          <ScalarProperty Name="health" ColumnName="health" />
+          <ScalarProperty Name="smoketype" ColumnName="smoketype" />
+          <ScalarProperty Name="curraddres" ColumnName="curraddres" />
+          <ScalarProperty Name="lastaddress" ColumnName="lastaddress" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="netifuse" ColumnName="netifuse" />
+          <ScalarProperty Name="netusing" ColumnName="netusing" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="knownfriend" ColumnName="knownfriend" />
+          <ScalarProperty Name="knowninitiative" ColumnName="knowninitiative" />
+          <ScalarProperty Name="knowngheraspage" ColumnName="knowngheraspage" />
+          <ScalarProperty Name="applydate" ColumnName="applydate" />
+          <ScalarProperty Name="sizejacket" ColumnName="sizejacket" />
+          <ScalarProperty Name="sizeshirt" ColumnName="sizeshirt" />
+          <ScalarProperty Name="sizepants" ColumnName="sizepants" />
+          <ScalarProperty Name="sizevest" ColumnName="sizevest" />
+          <ScalarProperty Name="sizesport" ColumnName="sizesport" />
+          <ScalarProperty Name="sizeshoes" ColumnName="sizeshoes" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="personalphoto" ColumnName="personalphoto" />
+          <ScalarProperty Name="idphoto" ColumnName="idphoto" />
+          <ScalarProperty Name="schoolname" ColumnName="schoolname" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+          <ScalarProperty Name="educationbranch" ColumnName="educationbranch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal_Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Skills)">
+        <MappingFragment StoreEntitySet="Personal_Skills">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="skillid" ColumnName="skillid" />
+          <ScalarProperty Name="eval" ColumnName="eval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Skills_Info)">
+        <MappingFragment StoreEntitySet="Skills_Info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
