@@ -4,338 +4,337 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AspNetRoles">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetUserClaims">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="ClaimType" Type="nvarchar(max)" />
-          <Property Name="ClaimValue" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="AspNetUserLogins">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetUserRoles">
-          <Key>
-            <PropertyRef Name="AspNetRoles_Id" />
-            <PropertyRef Name="AspNetUsers_Id" />
-          </Key>
-          <Property Name="AspNetRoles_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="AspNetUsers_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AspNetUsers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="256" />
-          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
-          <Property Name="PasswordHash" Type="nvarchar(max)" />
-          <Property Name="SecurityStamp" Type="nvarchar(max)" />
-          <Property Name="PhoneNumber" Type="nvarchar(max)" />
-          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
-          <Property Name="LockoutEndDateUtc" Type="datetime" />
-          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Best_Friends">
-          <Key>
-            <PropertyRef Name="personid" />
-            <PropertyRef Name="persontype" />
-            <PropertyRef Name="name" />
-          </Key>
-          <Property Name="personid" Type="int" Nullable="false" />
-          <Property Name="persontype" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Emergency_Address">
-          <Key>
-            <PropertyRef Name="personid" />
-            <PropertyRef Name="persontype" />
-            <PropertyRef Name="name" />
-          </Key>
-          <Property Name="personid" Type="int" Nullable="false" />
-          <Property Name="persontype" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="relationtype" Type="nvarchar" MaxLength="50" />
-          <Property Name="phone" Type="nvarchar" MaxLength="15" />
-        </EntityType>
-        <EntityType Name="Other_Course">
-          <Key>
-            <PropertyRef Name="personid" />
-            <PropertyRef Name="persontype" />
-            <PropertyRef Name="name" />
-          </Key>
-          <Property Name="personid" Type="int" Nullable="false" />
-          <Property Name="persontype" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="organizer" Type="nvarchar" MaxLength="100" />
-          <Property Name="date" Type="datetime" />
-        </EntityType>
-        <EntityType Name="Personal_Info">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="type" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="type" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="fname" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="lname" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="fathername" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="mothername" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ename" Type="nvarchar" MaxLength="200" />
-          <Property Name="bdate" Type="datetime" />
-          <Property Name="bronum" Type="int" />
-          <Property Name="glass" Type="bit" />
-          <Property Name="smoke" Type="bit" />
-          <Property Name="health" Type="bit" />
-          <Property Name="smoketype" Type="nvarchar" MaxLength="50" />
-          <Property Name="curraddres" Type="nvarchar" MaxLength="50" />
-          <Property Name="lastaddress" Type="nvarchar" MaxLength="50" />
-          <Property Name="mobile" Type="nvarchar" MaxLength="15" />
-          <Property Name="phone" Type="nvarchar" MaxLength="15" />
-          <Property Name="mail" Type="nvarchar" MaxLength="50" />
-          <Property Name="facebook" Type="nvarchar" MaxLength="300" />
-          <Property Name="education" Type="nvarchar" MaxLength="50" />
-          <Property Name="netifuse" Type="bit" />
-          <Property Name="netusing" Type="nvarchar" MaxLength="200" />
-          <Property Name="notes" Type="varchar(max)" />
-          <Property Name="knownfriend" Type="nvarchar" MaxLength="100" />
-          <Property Name="knowninitiative" Type="nvarchar" MaxLength="100" />
-          <Property Name="knowngheraspage" Type="bit" />
-          <Property Name="applydate" Type="datetime" />
-          <Property Name="sizejacket" Type="nvarchar" MaxLength="50" />
-          <Property Name="sizeshirt" Type="nvarchar" MaxLength="50" />
-          <Property Name="sizepants" Type="int" />
-          <Property Name="sizevest" Type="nvarchar" MaxLength="50" />
-          <Property Name="sizesport" Type="nvarchar" MaxLength="50" />
-          <Property Name="sizeshoes" Type="int" />
-          <Property Name="isactive" Type="bit" />
-          <Property Name="personalphoto" Type="nvarchar" MaxLength="200" />
-          <Property Name="idphoto" Type="nvarchar" MaxLength="200" />
-          <Property Name="schoolname" Type="nvarchar" MaxLength="200" />
-          <Property Name="Time" Type="nvarchar(max)" />
-          <Property Name="updateddate" Type="datetime" />
-          <Property Name="educationbranch" Type="nchar" MaxLength="30" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Personal_Skills">
-          <Key>
-            <PropertyRef Name="personid" />
-            <PropertyRef Name="persontype" />
-            <PropertyRef Name="skillid" />
-          </Key>
-          <Property Name="personid" Type="int" Nullable="false" />
-          <Property Name="persontype" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="skillid" Type="int" Nullable="false" />
-          <Property Name="eval" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="Skills_Info">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="100" />
-          <Property Name="flag" Type="char" MaxLength="4" />
-        </EntityType>
-        <Association Name="FK_AspNetUserRoles_AspNetRoles">
-          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
-          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetRoles">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserRoles">
-              <PropertyRef Name="AspNetRoles_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetUserRoles_AspNetUsers">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
-          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserRoles">
-              <PropertyRef Name="AspNetUsers_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Best_Friends_Personal_Info">
-          <End Role="Personal_Info" Type="Self.Personal_Info" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Best_Friends" Type="Self.Best_Friends" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Personal_Info">
-              <PropertyRef Name="id" />
-              <PropertyRef Name="type" />
-            </Principal>
-            <Dependent Role="Best_Friends">
-              <PropertyRef Name="personid" />
-              <PropertyRef Name="persontype" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserClaims">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Emergency_Address_Personal_Info">
-          <End Role="Personal_Info" Type="Self.Personal_Info" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Emergency_Address" Type="Self.Emergency_Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Personal_Info">
-              <PropertyRef Name="id" />
-              <PropertyRef Name="type" />
-            </Principal>
-            <Dependent Role="Emergency_Address">
-              <PropertyRef Name="personid" />
-              <PropertyRef Name="persontype" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Other_Course_Personal_Info">
-          <End Role="Personal_Info" Type="Self.Personal_Info" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Other_Course" Type="Self.Other_Course" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Personal_Info">
-              <PropertyRef Name="id" />
-              <PropertyRef Name="type" />
-            </Principal>
-            <Dependent Role="Other_Course">
-              <PropertyRef Name="personid" />
-              <PropertyRef Name="persontype" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Personal_Skills_Personal_Info">
-          <End Role="Personal_Info" Type="Self.Personal_Info" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Personal_Skills" Type="Self.Personal_Skills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Personal_Info">
-              <PropertyRef Name="id" />
-              <PropertyRef Name="type" />
-            </Principal>
-            <Dependent Role="Personal_Skills">
-              <PropertyRef Name="personid" />
-              <PropertyRef Name="persontype" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Personal_Skills_Skills_Info">
-          <End Role="Skills_Info" Type="Self.Skills_Info" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Personal_Skills" Type="Self.Personal_Skills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Skills_Info">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Personal_Skills">
-              <PropertyRef Name="skillid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Best_Friends" EntityType="Self.Best_Friends" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Emergency_Address" EntityType="Self.Emergency_Address" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Other_Course" EntityType="Self.Other_Course" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Personal_Info" EntityType="Self.Personal_Info" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Personal_Skills" EntityType="Self.Personal_Skills" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Skills_Info" EntityType="Self.Skills_Info" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Self.FK_AspNetUserRoles_AspNetRoles">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Self.FK_AspNetUserRoles_AspNetUsers">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Best_Friends_Personal_Info" Association="Self.FK_Best_Friends_Personal_Info">
-            <End Role="Personal_Info" EntitySet="Personal_Info" />
-            <End Role="Best_Friends" EntitySet="Best_Friends" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Emergency_Address_Personal_Info" Association="Self.FK_Emergency_Address_Personal_Info">
-            <End Role="Personal_Info" EntitySet="Personal_Info" />
-            <End Role="Emergency_Address" EntitySet="Emergency_Address" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Other_Course_Personal_Info" Association="Self.FK_Other_Course_Personal_Info">
-            <End Role="Personal_Info" EntitySet="Personal_Info" />
-            <End Role="Other_Course" EntitySet="Other_Course" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Personal_Skills_Personal_Info" Association="Self.FK_Personal_Skills_Personal_Info">
-            <End Role="Personal_Info" EntitySet="Personal_Info" />
-            <End Role="Personal_Skills" EntitySet="Personal_Skills" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Personal_Skills_Skills_Info" Association="Self.FK_Personal_Skills_Skills_Info">
-            <End Role="Skills_Info" EntitySet="Skills_Info" />
-            <End Role="Personal_Skills" EntitySet="Personal_Skills" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Model.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Model.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Model.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUsers" EntityType="Model.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Best_Friends" EntityType="Model.Store.Best_Friends" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Emergency_Address" EntityType="Model.Store.Emergency_Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Other_Course" EntityType="Model.Store.Other_Course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personal_Info" EntityType="Model.Store.Personal_Info" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personal_Skills" EntityType="Model.Store.Personal_Skills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills_Info" EntityType="Model.Store.Skills_Info" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Model.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Best_Friends_Personal_Info" Association="Model.Store.FK_Best_Friends_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Best_Friends" EntitySet="Best_Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emergency_Address_Personal_Info" Association="Model.Store.FK_Emergency_Address_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Emergency_Address" EntitySet="Emergency_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Other_Course_Personal_Info" Association="Model.Store.FK_Other_Course_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Other_Course" EntitySet="Other_Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personal_Skills_Personal_Info" Association="Model.Store.FK_Personal_Skills_Personal_Info">
+      <End Role="Personal_Info" EntitySet="Personal_Info" />
+      <End Role="Personal_Skills" EntitySet="Personal_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personal_Skills_Skills_Info" Association="Model.Store.FK_Personal_Skills_Skills_Info">
+      <End Role="Skills_Info" EntitySet="Skills_Info" />
+      <End Role="Personal_Skills" EntitySet="Personal_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Model.Store.FK_AspNetUserRoles_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Model.Store.FK_AspNetUserRoles_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Best_Friends">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Emergency_Address">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="relationtype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Other_Course">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="organizer" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="date" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Personal_Info">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="type" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="fname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="lname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fathername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="mothername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ename" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="bdate" Type="datetime" Nullable="true" />
+    <Property Name="bronum" Type="int" Nullable="true" />
+    <Property Name="glass" Type="bit" Nullable="true" />
+    <Property Name="smoke" Type="bit" Nullable="true" />
+    <Property Name="health" Type="bit" Nullable="true" />
+    <Property Name="smoketype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="curraddres" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lastaddress" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="phone" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="mail" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="facebook" Type="nvarchar" Nullable="true" MaxLength="300" />
+    <Property Name="education" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="netifuse" Type="bit" Nullable="true" />
+    <Property Name="netusing" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="notes" Type="varchar(max)" Nullable="true" />
+    <Property Name="knownfriend" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="knowninitiative" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="knowngheraspage" Type="bit" Nullable="true" />
+    <Property Name="applydate" Type="datetime" Nullable="true" />
+    <Property Name="sizejacket" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizeshirt" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizepants" Type="int" Nullable="true" />
+    <Property Name="sizevest" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizesport" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sizeshoes" Type="int" Nullable="true" />
+    <Property Name="isactive" Type="bit" Nullable="true" />
+    <Property Name="personalphoto" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="idphoto" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="schoolname" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="updateddate" Type="datetime" Nullable="true" />
+    <Property Name="educationbranch" Type="nchar" Nullable="true" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Personal_Skills">
+    <Key>
+      <PropertyRef Name="personid" />
+      <PropertyRef Name="persontype" />
+      <PropertyRef Name="skillid" />
+    </Key>
+    <Property Name="personid" Type="int" Nullable="false" />
+    <Property Name="persontype" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="skillid" Type="int" Nullable="false" />
+    <Property Name="eval" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Skills_Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="flag" Type="char" Nullable="true" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="AspNetRoles_Id" />
+      <PropertyRef Name="AspNetUsers_Id" />
+    </Key>
+    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Model.Store.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Model.Store.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Best_Friends_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Best_Friends" Type="Model.Store.Best_Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Best_Friends">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emergency_Address_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Emergency_Address" Type="Model.Store.Emergency_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Emergency_Address">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Other_Course_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Other_Course" Type="Model.Store.Other_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Other_Course">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personal_Skills_Personal_Info">
+    <End Role="Personal_Info" Type="Model.Store.Personal_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personal_Skills" Type="Model.Store.Personal_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal_Info">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="Personal_Skills">
+        <PropertyRef Name="personid" />
+        <PropertyRef Name="persontype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personal_Skills_Skills_Info">
+    <End Role="Skills_Info" Type="Model.Store.Skills_Info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personal_Skills" Type="Model.Store.Personal_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills_Info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personal_Skills">
+        <PropertyRef Name="skillid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles">
+    <End Role="AspNetRoles" Type="Model.Store.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetRoles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers">
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetUsers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -469,7 +468,7 @@
           <Property Name="schoolname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
-          <Property Name="educationbranch" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="educationbranch" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="true" />
           <NavigationProperty Name="Best_Friends" Relationship="Self.FK_Best_Friends_Personal_Info" FromRole="Personal_Info" ToRole="Best_Friends" />
           <NavigationProperty Name="Emergency_Address" Relationship="Self.FK_Emergency_Address_Personal_Info" FromRole="Personal_Info" ToRole="Emergency_Address" />
           <NavigationProperty Name="Other_Course" Relationship="Self.FK_Other_Course_Personal_Info" FromRole="Personal_Info" ToRole="Other_Course" />
@@ -655,160 +654,159 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HRContext">
-          <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="Model.AspNetRole">
-              <MappingFragment StoreEntitySet="AspNetRoles">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="Model.AspNetUserClaim">
-              <MappingFragment StoreEntitySet="AspNetUserClaims">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
-                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="Model.AspNetUserLogin">
-              <MappingFragment StoreEntitySet="AspNetUserLogins">
-                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
-                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="Model.AspNetUser">
-              <MappingFragment StoreEntitySet="AspNetUsers">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
-                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
-                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
-                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
-                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
-                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Best_Friends">
-            <EntityTypeMapping TypeName="Model.Best_Friends">
-              <MappingFragment StoreEntitySet="Best_Friends">
-                <ScalarProperty Name="personid" ColumnName="personid" />
-                <ScalarProperty Name="persontype" ColumnName="persontype" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Emergency_Address">
-            <EntityTypeMapping TypeName="Model.Emergency_Address">
-              <MappingFragment StoreEntitySet="Emergency_Address">
-                <ScalarProperty Name="personid" ColumnName="personid" />
-                <ScalarProperty Name="persontype" ColumnName="persontype" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="relationtype" ColumnName="relationtype" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Other_Course">
-            <EntityTypeMapping TypeName="Model.Other_Course">
-              <MappingFragment StoreEntitySet="Other_Course">
-                <ScalarProperty Name="personid" ColumnName="personid" />
-                <ScalarProperty Name="persontype" ColumnName="persontype" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="organizer" ColumnName="organizer" />
-                <ScalarProperty Name="date" ColumnName="date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Personal_Info">
-            <EntityTypeMapping TypeName="Model.Personal_Info">
-              <MappingFragment StoreEntitySet="Personal_Info">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="fathername" ColumnName="fathername" />
-                <ScalarProperty Name="mothername" ColumnName="mothername" />
-                <ScalarProperty Name="ename" ColumnName="ename" />
-                <ScalarProperty Name="bdate" ColumnName="bdate" />
-                <ScalarProperty Name="bronum" ColumnName="bronum" />
-                <ScalarProperty Name="glass" ColumnName="glass" />
-                <ScalarProperty Name="smoke" ColumnName="smoke" />
-                <ScalarProperty Name="health" ColumnName="health" />
-                <ScalarProperty Name="smoketype" ColumnName="smoketype" />
-                <ScalarProperty Name="curraddres" ColumnName="curraddres" />
-                <ScalarProperty Name="lastaddress" ColumnName="lastaddress" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="mail" ColumnName="mail" />
-                <ScalarProperty Name="facebook" ColumnName="facebook" />
-                <ScalarProperty Name="education" ColumnName="education" />
-                <ScalarProperty Name="netifuse" ColumnName="netifuse" />
-                <ScalarProperty Name="netusing" ColumnName="netusing" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-                <ScalarProperty Name="knownfriend" ColumnName="knownfriend" />
-                <ScalarProperty Name="knowninitiative" ColumnName="knowninitiative" />
-                <ScalarProperty Name="knowngheraspage" ColumnName="knowngheraspage" />
-                <ScalarProperty Name="applydate" ColumnName="applydate" />
-                <ScalarProperty Name="sizejacket" ColumnName="sizejacket" />
-                <ScalarProperty Name="sizeshirt" ColumnName="sizeshirt" />
-                <ScalarProperty Name="sizepants" ColumnName="sizepants" />
-                <ScalarProperty Name="sizevest" ColumnName="sizevest" />
-                <ScalarProperty Name="sizesport" ColumnName="sizesport" />
-                <ScalarProperty Name="sizeshoes" ColumnName="sizeshoes" />
-                <ScalarProperty Name="isactive" ColumnName="isactive" />
-                <ScalarProperty Name="personalphoto" ColumnName="personalphoto" />
-                <ScalarProperty Name="idphoto" ColumnName="idphoto" />
-                <ScalarProperty Name="schoolname" ColumnName="schoolname" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
-                <ScalarProperty Name="educationbranch" ColumnName="educationbranch" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Personal_Skills">
-            <EntityTypeMapping TypeName="Model.Personal_Skills">
-              <MappingFragment StoreEntitySet="Personal_Skills">
-                <ScalarProperty Name="personid" ColumnName="personid" />
-                <ScalarProperty Name="persontype" ColumnName="persontype" />
-                <ScalarProperty Name="skillid" ColumnName="skillid" />
-                <ScalarProperty Name="eval" ColumnName="eval" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Skills_Info">
-            <EntityTypeMapping TypeName="Model.Skills_Info">
-              <MappingFragment StoreEntitySet="Skills_Info">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="flag" ColumnName="flag" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
-            <EndProperty Name="AspNetRoles">
-              <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
-            </EndProperty>
-            <EndProperty Name="AspNetUsers">
-              <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HRContext">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetRole)">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserClaim)">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserLogin)">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUser)">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Best_Friends">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Best_Friends)">
+        <MappingFragment StoreEntitySet="Best_Friends">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergency_Address">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Emergency_Address)">
+        <MappingFragment StoreEntitySet="Emergency_Address">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="relationtype" ColumnName="relationtype" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Other_Course">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Other_Course)">
+        <MappingFragment StoreEntitySet="Other_Course">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="organizer" ColumnName="organizer" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Info)">
+        <MappingFragment StoreEntitySet="Personal_Info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fathername" ColumnName="fathername" />
+          <ScalarProperty Name="mothername" ColumnName="mothername" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="bronum" ColumnName="bronum" />
+          <ScalarProperty Name="glass" ColumnName="glass" />
+          <ScalarProperty Name="smoke" ColumnName="smoke" />
+          <ScalarProperty Name="health" ColumnName="health" />
+          <ScalarProperty Name="smoketype" ColumnName="smoketype" />
+          <ScalarProperty Name="curraddres" ColumnName="curraddres" />
+          <ScalarProperty Name="lastaddress" ColumnName="lastaddress" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="netifuse" ColumnName="netifuse" />
+          <ScalarProperty Name="netusing" ColumnName="netusing" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="knownfriend" ColumnName="knownfriend" />
+          <ScalarProperty Name="knowninitiative" ColumnName="knowninitiative" />
+          <ScalarProperty Name="knowngheraspage" ColumnName="knowngheraspage" />
+          <ScalarProperty Name="applydate" ColumnName="applydate" />
+          <ScalarProperty Name="sizejacket" ColumnName="sizejacket" />
+          <ScalarProperty Name="sizeshirt" ColumnName="sizeshirt" />
+          <ScalarProperty Name="sizepants" ColumnName="sizepants" />
+          <ScalarProperty Name="sizevest" ColumnName="sizevest" />
+          <ScalarProperty Name="sizesport" ColumnName="sizesport" />
+          <ScalarProperty Name="sizeshoes" ColumnName="sizeshoes" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="personalphoto" ColumnName="personalphoto" />
+          <ScalarProperty Name="idphoto" ColumnName="idphoto" />
+          <ScalarProperty Name="schoolname" ColumnName="schoolname" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+          <ScalarProperty Name="educationbranch" ColumnName="educationbranch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal_Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Skills)">
+        <MappingFragment StoreEntitySet="Personal_Skills">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="skillid" ColumnName="skillid" />
+          <ScalarProperty Name="eval" ColumnName="eval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Skills_Info)">
+        <MappingFragment StoreEntitySet="Skills_Info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -822,7 +820,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

@@ -8,20 +8,25 @@
 <style>
     
 </style>
-
-
+<ul>
+    @*@foreach (var item in ViewBag.ids)
+    {
+        @item.type
+        @item.maxid
+    }*@
+</ul>
 <div class="row intro">
     <div class="col-md-4 form-group  col-md-offset-1  type blue-gradient">
         <i class="fa fa-male icon-male" aria-hidden="true"></i>
         <h1>يافع</h1> @*YM : Young Male*@
-        <span class="idperson">1</span>
+        <span class="idperson">@ViewBag.idYM</span>
         <span class="typeperson">YM</span>
     </div>
 
     <div class="col-md-4 form-group col-md-offset-2 type purple-gradient">
-        <i class="fa fa-female icon-female" aria-hidden="true"></i>
+        <i class="fa fa-female icon-female" aria-hidden="true"></i> 
         <h1>يافعة</h1>@*YF : Young Femal*@
-        <span class="idperson">2</span>
+        <span class="idperson">@ViewBag.idYF</span>
         <span class="typeperson">YF</span>
     </div>
 
@@ -29,13 +34,13 @@
     <div class="col-md-4 col-md-offset-1  form-group type  blue-gradient">
         <i class="fa fa-male icon-male" aria-hidden="true"></i>
         <h1>مستقبل</h1>@*FM : Future Male*@
-        <span class="idperson">3</span>
+        <span class="idperson">@ViewBag.idFM</span>
         <span class="typeperson">FM</span>
     </div>
     <div class="col-md-4 form-group col-md-offset-2 type purple-gradient">
         <i class="fa fa-female icon-female" aria-hidden="true"></i>
         <h1>مستقبلة</h1> @*FF : Female Femal*@
-        <span class="idperson">4</span>
+        <span class="idperson">@ViewBag.idFF</span>
         <span class="typeperson">FF</span>
     </div>
 </div>
@@ -45,7 +50,7 @@
         @Html.Partial("~/Views/Personal_Info/_CreatePersonalInfO.cshtml")
     </section>
     <section id="two">
-        @Html.Partial("~/Views/Personal_Info/_CreatePersonalInfO.cshtml")
+       
     </section>
     <section id="three">
         @*@Html.Partial("~/Views/Personal_Info/_CreatePersonalInfO.cshtml")*@
@@ -93,14 +98,14 @@
 
             if (type == "YM" || type == "FM")
                 $("#image").attr("src", '/images/defaultimg/imagemale.jpeg');
-
-              
             else
                 $("#image").attr("src", '/images/defaultimg/imagefemale.jpg');
 
             
             $("input[name='id']").val(id);
+            $("input[name='id']").text(id);
             $("input[name='type']").val(type);
+            $("input[name='type']").text(type);
            
 
         });
@@ -120,6 +125,8 @@
             
             
         });
+
+      
        
     </script>
    

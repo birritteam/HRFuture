@@ -74,3 +74,4 @@ C:\Users\Birr IT\Documents\GitHub\HRFuture\HRFuture\obj\Debug\HRFuture.dll
 C:\Users\Birr IT\Documents\GitHub\HRFuture\HRFuture\obj\Debug\HRFuture.pdb
 C:\Users\Birr IT\Documents\GitHub\HRFuture\HRFuture\obj\Debug\HRFuture.Resources.PersonalInfoArabic.resources
 C:\Users\Birr IT\Documents\GitHub\HRFuture\HRFuture\obj\Debug\HRFuture.csproj.GenerateResource.Cache
+C:\Users\Birr IT\Documents\GitHub\HRFuture\HRFuture\obj\Debug\HRFuture.csprojResolveAssemblyReference.cache

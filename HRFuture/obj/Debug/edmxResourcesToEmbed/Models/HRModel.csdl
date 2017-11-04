@@ -130,7 +130,7 @@
     <Property Name="schoolname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="updateddate" Type="DateTime" Precision="3" />
-    <Property Name="educationbranch" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="educationbranch" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="true" />
     <NavigationProperty Name="Best_Friends" Relationship="Self.FK_Best_Friends_Personal_Info" FromRole="Personal_Info" ToRole="Best_Friends" />
     <NavigationProperty Name="Emergency_Address" Relationship="Self.FK_Emergency_Address_Personal_Info" FromRole="Personal_Info" ToRole="Emergency_Address" />
     <NavigationProperty Name="Other_Course" Relationship="Self.FK_Other_Course_Personal_Info" FromRole="Personal_Info" ToRole="Other_Course" />

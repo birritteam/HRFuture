@@ -84,7 +84,6 @@ namespace HRFuture.Models
         public Nullable<int> sizepants { get; set; }
         [Display(Name = "sizevest", ResourceType = typeof(Resources.PersonalInfoArabic))]
         public string sizevest { get; set; }
-
         [Display(Name = "sizesport", ResourceType = typeof(Resources.PersonalInfoArabic))]
         public string sizesport { get; set; }
         [Display(Name = "sizeshoes", ResourceType = typeof(Resources.PersonalInfoArabic))]
@@ -103,6 +102,7 @@ namespace HRFuture.Models
         public Nullable<System.DateTime> updateddate { get; set; }
         [Display(Name = "educationbranch", ResourceType = typeof(Resources.PersonalInfoArabic))]
         public string educationbranch { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Best_Friends> Best_Friends { get; set; }

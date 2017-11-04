@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HRFuture.Models;
+using System.Web.Hosting;
+using System.IO;
 
 namespace HRFuture.Controllers
 {
@@ -39,6 +41,10 @@ namespace HRFuture.Controllers
         // GET: Personal_Info/Create
         public ActionResult Create()
         {
+            ViewBag.idYM = (db.Personal_Info.Where(x => x.type == "YM").Max(x => x.id) + 1);
+            ViewBag.idYF = (db.Personal_Info.Where(x => x.type == "YF").Max(x => x.id) + 1);
+            ViewBag.idFM = (db.Personal_Info.Where(x => x.type == "FM").Max(x => x.id) + 1);
+            ViewBag.idFF = (db.Personal_Info.Where(x => x.type == "FF").Max(x => x.id) + 1);
             return View();
         }
 
@@ -47,16 +53,31 @@ namespace HRFuture.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "id,type,fname,lname,fathername,mothername,ename,bdate,bronum,glass,smoke,health,smoketype,curraddres,lastaddress,mobile,phone,mail,facebook,education,netifuse,netusing,notes,knownfriend,knowninitiative,knowngheraspage,applydate,sizejacket,sizeshirt,sizepants,sizevest,sizesport,sizeshoes,isactive,personalphoto,idphoto")] Personal_Info personal_Info)
+        public async Task<ActionResult> Create([Bind(Include = "id,type,fname,lname,fathername,mothername,ename,bdate,bronum,glass,smoke,health,smoketype,curraddres,lastaddress,mobile,phone,mail,facebook,education,netifuse,netusing,notes,knownfriend,knowninitiative,knowngheraspage,applydate,sizejacket,sizeshirt,sizepants,sizevest,sizesport,sizeshoes,isactive,personalphoto,schoolname,Time,updateddate,educationbranch")] Personal_Info personal_Info, IEnumerable<HttpPostedFileBase> file1, IEnumerable<HttpPostedFileBase> file2)
         {
+
             if (ModelState.IsValid)
             {
-                db.Personal_Info.Add(personal_Info);
-                await db.SaveChangesAsync();
-                return new JsonResult { Data = "Successd" };
-            }
+                try
+                {
+                    if ( Request.Files.Count > 0 )
+                    {
+                        personal_Info.personalphoto = saveFile(file1, personal_Info.type + "_" + personal_Info.type + "_personalimage");
+                        personal_Info.idphoto = saveFile(file2, personal_Info.type + "_" + personal_Info.type + "_idimage");
+                    }
+                       
+                    db.Personal_Info.Add(personal_Info);
+                    await db.SaveChangesAsync();
+                    return new JsonResult { Data = "Successd" };
+                }
+                catch(Exception ex)
+                {
+                    return new JsonResult { Data = "Faild"  + ex.Message};
+                }
+                 
+                }
 
-            return new JsonResult { Data = "Faild" };
+            return new JsonResult { Data = "Faild"   };
         }
 
         // GET: Personal_Info/Edit/5
@@ -79,10 +100,11 @@ namespace HRFuture.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "id,type,fname,lname,fathername,mothername,ename,bdate,bronum,glass,smoke,health,smoketype,curraddres,lastaddress,mobile,phone,mail,facebook,education,netifuse,netusing,notes,knownfriend,knowninitiative,knowngheraspage,applydate,sizejacket,sizeshirt,sizepants,sizevest,sizesport,sizeshoes,isactive,personalphoto,idphoto")] Personal_Info personal_Info)
+        public async Task<ActionResult> Edit([Bind(Include = "id,type,fname,lname,fathername,mothername,ename,bdate,bronum,glass,smoke,health,smoketype,curraddres,lastaddress,mobile,phone,mail,facebook,education,netifuse,netusing,notes,knownfriend,knowninitiative,knowngheraspage,applydate,sizejacket,sizeshirt,sizepants,sizevest,sizesport,sizeshoes,isactive,personalphoto,schoolname,Time,updateddate,educationbranch")] Personal_Info personal_Info)
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(personal_Info).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -124,5 +146,37 @@ namespace HRFuture.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public string saveFile ( IEnumerable<HttpPostedFileBase> file ,string filename  )
+        {
+            string path = HostingEnvironment.ApplicationPhysicalPath + "images";
+            if (file != null )
+                foreach (var f in file)
+                {
+                    path = Path.Combine(path, filename + Path.GetExtension(f.FileName));
+                    f.SaveAs(path);
+                }
+            return path;
+           
+        }
+
+        public ActionResult uploadimage(IEnumerable<HttpPostedFileBase> uploadedimage)
+        {
+            string path = Server.MapPath("~/images/");
+         
+            
+            if (uploadedimage != null)
+                foreach (var f in uploadedimage)
+                {
+                    path = Path.Combine(path, "Hi" + Path.GetExtension(f.FileName));
+                    f.SaveAs(path);
+                    return new JsonResult { Data = "تم التحميل بنجاح" };
+                }
+
+            
+                
+            return new JsonResult { Data = "فشل العملية" };
+        }
+
     }
 }

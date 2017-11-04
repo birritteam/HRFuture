@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HRContext">
     <EntitySetMapping Name="AspNetRoles">
-      <EntityTypeMapping TypeName="Model.AspNetRole">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetRole)">
         <MappingFragment StoreEntitySet="AspNetRoles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserClaims">
-      <EntityTypeMapping TypeName="Model.AspNetUserClaim">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserClaim)">
         <MappingFragment StoreEntitySet="AspNetUserClaims">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserLogins">
-      <EntityTypeMapping TypeName="Model.AspNetUserLogin">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserLogin)">
         <MappingFragment StoreEntitySet="AspNetUserLogins">
           <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
           <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="Model.AspNetUser">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUser)">
         <MappingFragment StoreEntitySet="AspNetUsers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -47,7 +47,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Best_Friends">
-      <EntityTypeMapping TypeName="Model.Best_Friends">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Best_Friends)">
         <MappingFragment StoreEntitySet="Best_Friends">
           <ScalarProperty Name="personid" ColumnName="personid" />
           <ScalarProperty Name="persontype" ColumnName="persontype" />
@@ -56,7 +56,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Emergency_Address">
-      <EntityTypeMapping TypeName="Model.Emergency_Address">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Emergency_Address)">
         <MappingFragment StoreEntitySet="Emergency_Address">
           <ScalarProperty Name="personid" ColumnName="personid" />
           <ScalarProperty Name="persontype" ColumnName="persontype" />
@@ -67,7 +67,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Other_Course">
-      <EntityTypeMapping TypeName="Model.Other_Course">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Other_Course)">
         <MappingFragment StoreEntitySet="Other_Course">
           <ScalarProperty Name="personid" ColumnName="personid" />
           <ScalarProperty Name="persontype" ColumnName="persontype" />
@@ -78,7 +78,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Personal_Info">
-      <EntityTypeMapping TypeName="Model.Personal_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Info)">
         <MappingFragment StoreEntitySet="Personal_Info">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="type" ColumnName="type" />
@@ -124,7 +124,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Personal_Skills">
-      <EntityTypeMapping TypeName="Model.Personal_Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Personal_Skills)">
         <MappingFragment StoreEntitySet="Personal_Skills">
           <ScalarProperty Name="personid" ColumnName="personid" />
           <ScalarProperty Name="persontype" ColumnName="persontype" />
@@ -134,7 +134,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Skills_Info">
-      <EntityTypeMapping TypeName="Model.Skills_Info">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Skills_Info)">
         <MappingFragment StoreEntitySet="Skills_Info">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
